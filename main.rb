@@ -1,8 +1,7 @@
-require 'watir'
-require File.expand_path('../sneakersnstuff/sneakersnstuff', __FILE__)
+require File.expand_path('../sneakersnstuff/config', __FILE__)
 
-product_url = 'http://www.sneakersnstuff.com/en/product/27600/adidas-stan-smith-boost'
-user_cookie = 'XciKA+ncV2N6AZXbw4+MhVgHdbSRfya2R7PiDSLh1M/6eCy/D8LBntPD7nAEREltLTIzpnuV4rgWaOI/hfuPgQ5+46uuyMvuO4QxQYoeYYVpIgVQ'
+user_cookie = 'DZdwFQTxaApjKVjliDbwZ30u56NUBr1Mh5LzGYss1GbelnMZ1riEkwd8pjZEqGDS3QNCPreibCubrWVC4RziIKRgNXNXH9tstxSVGCcWWfZ2Nab5'
+product_id = '183023'
 
-sstuff = Tap::Sneakersnstuff.new(user_cookie)
-sstuff.add_to_cart(product_url)
+sstuff = Tap::V2::Sneakersnstuff.new(user_cookie)
+sstuff.add_to_shipping_cart(product_id)
